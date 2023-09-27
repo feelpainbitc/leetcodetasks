@@ -1,0 +1,20 @@
+/**
+ * @param {Function[]} functions
+ * @return {Function}
+ */
+var compose = function(functions) {
+    
+	return function(x) {
+        for(fn of functions.reverse()){
+            x=fn(x)
+        }
+        return x
+    }
+};
+//also can be done with arr.reduceRight method
+var compose = function(functions) {
+    const fn=(acc,f)=>f(acc)
+	return function(x) {
+        return functions.reduceRight(fn,x)
+    }
+};

@@ -1,0 +1,15 @@
+/**
+ * @param {integer} init
+ * @return { increment: Function, decrement: Function, reset: Function }
+ */
+var createCounter = function(init) {
+    let num
+    num=init
+    return {
+        increment:()=>++num,
+        reset:()=>num=init,
+           
+        
+        decrement:()=>--num,
+    }
+};
