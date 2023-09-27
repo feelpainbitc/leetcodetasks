@@ -1,0 +1,9 @@
+/**
+ * @param {number[]} arr
+ * @param {Function} fn
+ * @return {number[]}
+ */
+var filter = function(arrs, fn) {
+    let result=arrs.filter((arr,i)=>fn(arr,i))
+    return result
+};
