@@ -1,0 +1,17 @@
+/**
+ * @param {Function} fn
+ * @return {Function}
+ */
+function memoize(fn) {
+    const calls={}
+    return function(...args) {
+        const val=JSON.stringify(args)
+        if(val in calls){
+            return calls[val]
+        }
+        else{
+            calls[val]=fn(...args)
+            return calls[val]
+        }
+    }
+}
